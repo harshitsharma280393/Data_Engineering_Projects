@@ -1,0 +1,17 @@
+{
+  "name": "ingest_card_transactions",
+  "properties": {
+    "activities": [
+      {
+        "name": "GetFiles",
+        "type": "Copy",
+        "description": "Copy raw files from SFTP/API to ADLS - landing"
+      },
+      {
+        "name": "TriggerDatabricksJob",
+        "type": "DatabricksSparkPythonActivity",
+        "description": "Run transformation notebook"
+      }
+    ]
+  }
+}
